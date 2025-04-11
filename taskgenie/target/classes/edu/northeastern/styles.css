@@ -1,0 +1,278 @@
+/* Main application styles */
+.root {
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    background-color: #f5f5f5;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 12px;
+    -fx-background-color: #f5f5f5;
+}
+
+/* Logo container */
+.logo-container {
+    background-color: transparent;
+    min-height: 140px;
+    text-align: center;
+    -fx-background-color: transparent;
+    -fx-min-height: 140px;
+    -fx-alignment: center;
+}
+
+/* Panel styles */
+.panel {
+    background-color: white;
+    border-radius: 5px;
+    border-color: transparent;
+    border-width: 0;
+    border-style: solid;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    padding: 10px;
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 1);
+    -fx-padding: 10px;
+}
+
+/* Filter panel */
+.filter-panel {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 8px;
+    align-items: center;
+    -fx-background-color: #e0e0e0;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-padding: 8px;
+    -fx-alignment: center-left;
+}
+
+/* Enhanced statistics panel */
+.stats-panel {
+    background-color: transparent;
+    border-color: transparent;
+    border-width: 0;
+    border-style: solid;
+    text-align: center;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-alignment: center;
+}
+
+.stat-card {
+    background-color: white;
+    border-radius: 5px;
+    border-color: #e0e0e0;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 0 3px rgba(0,0,0,0.05);
+    min-width: 100px;
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 3, 0, 0, 1);
+    -fx-min-width: 100px;
+}
+
+.overdue-card {
+    border-color: #ffcdd2;
+    -fx-border-color: #ffcdd2;
+}
+
+.priority-card {
+    border-color: #ffecb3;
+    -fx-border-color: #ffecb3;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3a7ca5;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3a7ca5;
+}
+
+.overdue-card .stat-value {
+    color: #d32f2f;
+    -fx-text-fill: #d32f2f;
+}
+
+.priority-card .stat-value {
+    color: #ff8f00;
+    -fx-text-fill: #ff8f00;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #757575;
+    -fx-font-size: 12px;
+    -fx-text-fill: #757575;
+}
+
+/* Progress bar styling */
+.progress-bar {
+    accent-color: #4CAF50;
+    -fx-accent: #4CAF50;
+}
+
+.progress-bar > .track {
+    background-color: #e0e0e0;
+    -fx-background-color: #e0e0e0;
+}
+
+/* Button styles */
+.button {
+    cursor: pointer;
+    border-radius: 3px;
+    border-color: transparent;
+    border-width: 0;
+    border-style: solid;
+    padding: 5px 15px;
+    -fx-cursor: hand;
+    -fx-background-radius: 3px;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 5px 15px;
+}
+
+.add-button {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    -fx-base: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.delete-button {
+    background-color: #F44336;
+    color: white;
+    font-weight: bold;
+    -fx-base: #F44336;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Table styles */
+.table-view {
+    background-color: white;
+    border-color: #d0d0d0;
+    border-width: 1px;
+    border-style: solid;
+    -fx-background-color: white;
+    -fx-table-cell-border-color: transparent;
+    -fx-border-color: #d0d0d0;
+    -fx-border-width: 1px;
+}
+
+.table-view .column-header {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    -fx-background-color: #f0f0f0;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell:odd {
+    background-color: #f8f8f8;
+    -fx-background-color: #f8f8f8;
+}
+
+.table-view .table-row-cell:selected {
+    background-color: #bcdeff;
+    color: black;
+    -fx-background-color: #bcdeff;
+    -fx-text-fill: black;
+}
+
+/* Make sure all cells in selected rows have black text */
+.table-view .table-row-cell:selected .table-cell {
+    color: black;
+    -fx-text-fill: black;
+}
+
+/* Priority styling */
+.priority-high {
+    color: red;
+    font-weight: bold;
+    -fx-text-fill: red;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:selected .table-cell.priority-high {
+    color: darkred;
+    font-weight: bold;
+    -fx-text-fill: darkred;
+    -fx-font-weight: bold;
+}
+
+.priority-medium {
+    color: orange;
+    -fx-text-fill: orange;
+}
+
+.table-row-cell:selected .table-cell.priority-medium {
+    color: darkorange;
+    -fx-text-fill: darkorange;
+}
+
+.priority-low {
+    color: green;
+    -fx-text-fill: green;
+}
+
+.table-row-cell:selected .table-cell.priority-low {
+    color: darkgreen;
+    -fx-text-fill: darkgreen;
+}
+
+/* Overdue styling */
+.overdue {
+    color: red;
+    font-weight: bold;
+    -fx-text-fill: red;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:selected .table-cell.overdue {
+    color: darkred;
+    font-weight: bold;
+    -fx-text-fill: darkred;
+    -fx-font-weight: bold;
+}
+
+/* Completed task styling */
+.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+    -fx-opacity: 0.6;
+    -fx-strikethrough: true;
+}
+
+/* New completed task row styling */
+.completed-task {
+    opacity: 0.7;
+    text-decoration: line-through;
+    color: #666666;
+    -fx-opacity: 0.7;
+    -fx-strikethrough: true;
+    -fx-text-fill: #666666;
+}
+
+/* This style applies to the entire row */
+.table-row-cell:filled:selected .table-cell.completed-task {
+    opacity: 0.7;
+    text-decoration: line-through;
+    color: #333333;
+    -fx-opacity: 0.7;
+    -fx-strikethrough: true;
+    -fx-text-fill: #333333;
+}

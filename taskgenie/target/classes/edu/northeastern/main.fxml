@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="edu.northeastern.TaskManagerController">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+    
+    <!-- Logo in a HBox -->
+    <HBox alignment="CENTER" styleClass="logo-container">
+        <padding>
+            <Insets bottom="5" left="10" right="10" top="5" />
+        </padding>
+        <ImageView fx:id="logoImageView" fitHeight="150" fitWidth="150" preserveRatio="true">
+            <Image url="@task_logo.png" />
+        </ImageView>
+    </HBox>
+    
+    <!-- Filter Panel with buttons -->
+    <HBox spacing="10" styleClass="filter-panel">
+        <padding>
+            <Insets bottom="5" left="10" right="10" top="5" />
+        </padding>
+        <Label text="Filters:" />
+        <ComboBox fx:id="filterPriorityCombo" />
+        <ComboBox fx:id="filterCategoryCombo" />
+        <CheckBox fx:id="showCompletedCheck" text="Show Completed" selected="true" />
+        <CheckBox fx:id="showOverdueCheck" text="Show Overdue Only" />
+        <HBox HBox.hgrow="ALWAYS" />
+        <Button fx:id="addButton" text="Add Task" onAction="#handleAddTaskDialog" styleClass="add-button"/>
+        <Button fx:id="deleteButton" text="Delete Task" onAction="#handleDeleteTask" styleClass="delete-button"/>
+    </HBox>
+    
+    <!-- Enhanced Statistics Panel -->
+    <HBox spacing="10" styleClass="stats-panel">
+        <padding>
+            <Insets bottom="8" left="10" right="10" top="8" />
+        </padding>
+        
+        <!-- Total Tasks Card -->
+        <VBox styleClass="stat-card" HBox.hgrow="ALWAYS" alignment="CENTER">
+            <padding>
+                <Insets bottom="5" left="10" right="10" top="5" />
+            </padding>
+            <Label fx:id="totalTasksLabel" text="0" styleClass="stat-value"/>
+            <Label text="Total Tasks" styleClass="stat-label"/>
+        </VBox>
+        
+        <!-- Completed Tasks Card -->
+        <VBox styleClass="stat-card" HBox.hgrow="ALWAYS" alignment="CENTER">
+            <padding>
+                <Insets bottom="5" left="10" right="10" top="5" />
+            </padding>
+            <Label fx:id="completedTasksLabel" text="0" styleClass="stat-value"/>
+            <Label text="Completed" styleClass="stat-label"/>
+            <ProgressBar fx:id="completionProgressBar" prefWidth="100" progress="0" />
+        </VBox>
+        
+        <!-- Overdue Tasks Card -->
+        <VBox styleClass="stat-card, overdue-card" HBox.hgrow="ALWAYS" alignment="CENTER">
+            <padding>
+                <Insets bottom="5" left="10" right="10" top="5" />
+            </padding>
+            <Label fx:id="overdueTasksLabel" text="0" styleClass="stat-value"/>
+            <Label text="Overdue" styleClass="stat-label"/>
+        </VBox>
+        
+        <!-- High Priority Card -->
+        <VBox styleClass="stat-card, priority-card" HBox.hgrow="ALWAYS" alignment="CENTER">
+            <padding>
+                <Insets bottom="5" left="10" right="10" top="5" />
+            </padding>
+            <Label fx:id="highPriorityLabel" text="0" styleClass="stat-value"/>
+            <Label text="High Priority" styleClass="stat-label"/>
+        </VBox>
+    </HBox>
+    
+    <!-- Task Table -->
+    <TableView fx:id="taskTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="completedCol" text="Done" />
+            <TableColumn fx:id="nameCol" text="Task Name" />
+            <TableColumn fx:id="descriptionCol" text="Description" />
+            <TableColumn fx:id="priorityCol" text="Priority" />
+            <TableColumn fx:id="deadlineCol" text="Deadline" />
+            <TableColumn fx:id="categoryCol" text="Category" />
+        </columns>
+    </TableView>
+</VBox>
