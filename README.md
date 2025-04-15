@@ -146,4 +146,4 @@ src/resources/ # FXML layouts and CSS files
 ## Contributors
 
 - **Nafisa Anzum** - Information Systems, Northeastern University
-- **Nihal Majumder** - Software Engineering Systems, Northeastern University
+- **Nihal Majumder** - Information Systems, Northeastern University
